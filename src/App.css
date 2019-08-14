@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'Iran Sans';
+
+	src: local('Iran Sans'), local('Iran-Sans'), url('./IRANSansWeb.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+body {
+	font-family: 'Iran Sans';
+}
