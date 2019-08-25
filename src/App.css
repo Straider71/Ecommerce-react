@@ -1,7 +1,13 @@
 @font-face {
 	font-family: 'Iran Sans';
 
-	src: local('Iran Sans'), local('Iran-Sans'), url('./IRANSansWeb.ttf') format('truetype'); /* Safari, Android, iOS */
+	src: local('Iran Sans'), local('Iran-Sans'),
+		url('./assets/IRANSansWeb.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+	font-family: 'Shabnam';
+
+	src: local('Shabnam'), url('./assets/shabnam-fd-0.woff') format('woff'); /* Safari, Android, iOS */
 }
 body {
 	font-family: 'Iran Sans';
