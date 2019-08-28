@@ -1,5 +1,5 @@
 .collection-item {
-	width: 22%;
+	width: 22vw;
 	display: flex;
 	flex-direction: column;
 	height: 350px;
@@ -12,6 +12,9 @@
 		background-size: cover;
 		background-position: center;
 		margin-bottom: 5px;
+
+		box-shadow: 0 10px 20px rgba(#000, 0.19), 0 6px 6px rgba(#000, 0.23);
+		border-radius: 5px;
 	}
 
 	.custom-button {
@@ -21,10 +24,12 @@
 		top: 255px;
 		display: none;
 	}
+
 	&:hover {
 		.image {
 			opacity: 0.8;
 		}
+
 		.custom-button {
 			opacity: 0.85;
 			display: flex;
