@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './sign-up.styles.scss';
+import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -30,7 +30,10 @@ class SignUp extends React.Component {
 		}
 
 		try {
-			const { user } = await auth.createUserWithEmailAndPassword(email, password);
+			const { user } = await auth.createUserWithEmailAndPassword(
+				email,
+				password
+			);
 
 			await creatUserProfileDocument(user, { displayName });
 
@@ -54,16 +57,16 @@ class SignUp extends React.Component {
 	render() {
 		const { displayName, email, password, confirmPassword } = this.state;
 		return (
-			<div className="sign-up">
-				<h2 className="title">I do not habe a account</h2>
-				<span>Sign up with your email and password</span>
+			<SignUpContainer>
+				<SignUpTitle>حساب کاربری ندارم</SignUpTitle>
+				<span>ثبت‌نام با ایمیل و رمز شخصی</span>
 				<form className="sign-up-form" onSubmit={this.handleSubmit}>
 					<FormInput
 						type="text"
 						name="displayName"
 						value={displayName}
 						onChange={this.handleChange}
-						label="Display Name"
+						label="نام کاربری"
 						required
 					/>
 					<FormInput
@@ -71,7 +74,7 @@ class SignUp extends React.Component {
 						name="email"
 						value={email}
 						onChange={this.handleChange}
-						label="Email"
+						label="ایمیل"
 						required
 					/>
 					<FormInput
@@ -79,7 +82,7 @@ class SignUp extends React.Component {
 						name="password"
 						value={password}
 						onChange={this.handleChange}
-						label="password"
+						label="رمز"
 						required
 					/>
 					<FormInput
@@ -87,12 +90,12 @@ class SignUp extends React.Component {
 						name="confirmPassword"
 						value={confirmPassword}
 						onChange={this.handleChange}
-						label="confirmPassword"
+						label="تکرار رمز"
 						required
 					/>
-					<CustomButton type="submit">SIGN UP</CustomButton>
+					<CustomButton type="submit">ثبت‌نام</CustomButton>
 				</form>
-			</div>
+			</SignUpContainer>
 		);
 	}
 }
